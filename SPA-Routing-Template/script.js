@@ -4,7 +4,7 @@
 var scotchApp = angular.module('scotchApp', ['ngRoute']);
 
 // configure our routes
-scotchApp.config(function ($routeProvider) {
+scotchApp.config(['$routeProvider', function ($routeProvider){
     $routeProvider
         // route for the home page
         .when('/', {
@@ -21,7 +21,7 @@ scotchApp.config(function ($routeProvider) {
             templateUrl: 'pages/contact.html',
             controller: 'contactController'            
         });
-});
+}]);
 
 // create the controller and inject Angular's $scope
 // also include ngRoute for all our routing needs
