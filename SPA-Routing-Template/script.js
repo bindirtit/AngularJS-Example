@@ -14,12 +14,12 @@ scotchApp.config(function ($routeProvider) {
         // route for the about page
         .when('/about', {
             templateUrl: 'pages/about.html',
-            controller: 'aboutController'
+            controller: 'aboutController'            
         })
         // route for the contact page
         .when('/contact/:myParam', {
             templateUrl: 'pages/contact.html',
-            controller: 'contactController'
+            controller: 'contactController'            
         });
 });
 
@@ -31,11 +31,11 @@ scotchApp.controller('mainController', function ($scope) {
     $scope.message = 'Everyone come and see how good I look!';
 });
 
-scotchApp.controller('aboutController', function ($scope) {
-    $scope.message = 'Look! I am an about page.';
+scotchApp.controller('aboutController', function ($scope, $route) {
+    $scope.message = 'Look! I am an about page....';    
 });
 
 scotchApp.controller('contactController', function ($scope, $routeParams) {
     $scope.message = 'Contact us! JK. This is just a demo.';
-    $scope.myParam = $routeParams.myParam;
+    $scope.myParam = $routeParams.myParam;    
 });
